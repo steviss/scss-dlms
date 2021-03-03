@@ -1,0 +1,30 @@
+@function add-palette-var($colorRGBA, $theme, $colorKey, $modifier: false, $value: false, $refrenceId: false) {
+    $colorName: unique-id();
+    $oldColorsGenerator: $colorsGenerator;
+    $oldColors: $colors;
+    $colorMap: (
+        $theme: (
+            $colorName: $colorRGBA,
+        ),
+    );
+    $colorGenMap: (
+        $theme: (
+            $colorName: (
+                'colorKey': $colorKey,
+                'modifier': $modifier,
+                'value': $value,
+            ),
+        ),
+    );
+    $colors: map-deep-merge($oldColors, $colorMap) !global;
+    $colorsGenerator: map-deep-merge($oldColorsGenerator, $colorGenMap) !global;
+    @if ($refrenceId != false) {
+        $oldRefrenceMap: $referenceMap;
+        $refrence: (
+            $colorName: $refrenceId,
+        );
+        $referenceMap: map-merge($oldRefrenceMap, $refrence) !global;
+    }
+    @debug $colorsGenerator;
+    @return #{$colorName};
+}

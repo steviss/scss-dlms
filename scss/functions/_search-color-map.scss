@@ -1,0 +1,8 @@
+@function search-color-map($searchMap, $findColor) {
+    @each $color, $colorName in $searchMap {
+        @if match-colors($colorName, $findColor) {
+            @return true;
+        }
+    }
+    @return false;
+}

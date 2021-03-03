@@ -1,0 +1,62 @@
+@function set-color($args) {
+    @if type-of($args) == 'map' {
+        $refrenceVarId: '';
+        $paletteMap: map-get($palettes, $paletteDefault);
+        @each $themeName, $themeColor in $args {
+            @if $themeName == $themeDefault {
+                @if type-of($themeColor) == 'list' {
+                    $setColor: nth($themeColor, 1);
+                    $setModifier: nth($themeColor, 2);
+                    $setValue: nth($themeColor, 3);
+                    @if map-has-key($paletteMap, $setColor) {
+                        $refrenceVarId: generate-color($setColor, $setModifier, $setValue, $themeName);
+                    } @else {
+                        @error 'Supplied key: `#{$setColor}`, is not included in the pallette map (please note, quotes are not allowed), please use one of the following key values: #{$paletteMap}.';
+                    }
+                } @else {
+                    @if map-has-key($paletteMap, $themeColor) {
+                        $refrenceVarId: generate-color($themeColor, $theme: $themeName);
+                    } @else {
+                        @error 'Supplied key: `#{$themeColor}`, is not included in the pallette map (please note, quotes are not allowed), please use one of the following key values: #{$paletteMap}.';
+                    }
+                }
+            } @else {
+                @if type-of($themeColor) == 'list' {
+                    $setColor: nth($themeColor, 1);
+                    $setModifier: nth($themeColor, 2);
+                    $setValue: nth($themeColor, 3);
+                    $setColorRGBA: call(get-function($setModifier), map-get(map-get($palettes, $paletteDefault), $setColor), $setValue);
+                    @if map-has-key($paletteMap, $setColor) {
+                        $other: add-palette-var(
+                            $colorRGBA: $setColorRGBA,
+                            $theme: $themeName,
+                            $colorKey: $setColor,
+                            $modifier: $setModifier,
+                            $value: $setValue,
+                            $refrenceId: $refrenceVarId,
+                        );
+                    } @else {
+                        @error 'Supplied key: `#{$setColor}`, is not included in the pallette map (please note, quotes are not allowed), please use one of the following key values: #{$paletteMap}.';
+                    }
+                } @else {
+                    $setColor: $themeColor;
+                    $setColorRGBA: map-get(map-get($palettes, $paletteDefault), $setColor);
+                    @if map-has-key($paletteMap, $setColor) {
+                        $other: add-palette-var(
+                            $colorRGBA: $setColorRGBA,
+                            $theme: $themeName,
+                            $colorKey: $setColor,
+                            $refrenceId: $refrenceVarId,
+                        );
+                    } @else {
+                        @error 'Supplied key: `#{$setColor}`, is not included in the pallette map (please note, quotes are not allowed), please use one of the following key values: #{$paletteMap}.';
+                    }
+                }
+            }
+        }
+        @return var(--#{$refrenceVarId});
+    } @else {
+        @error 'This function only accepts a map as an argument, please use the following syntax: (dark: $color, light: $color). Color must be a valid key in palettes. Color functions are also available, just pass $color as a list ($color, $modifier, $value). Paletters can be found in _varibles.css';
+        @return 0;
+    }
+}

@@ -1,0 +1,12 @@
+// Component: Safari 10.1 and above
+// Description: Target Safari 10.1 and above
+
+@mixin ios($browser: 'safari') {
+  @media not all and (min-resolution: 0.001dpcm) {
+    @if $browser == 'safari' {
+      @supports (-webkit-appearance: none) {
+        @content;
+      }
+    }
+  }
+}

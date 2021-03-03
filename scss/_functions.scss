@@ -1,0 +1,15 @@
+@import 'functions/add-palette-var';
+@import 'functions/get-palette-var';
+@import 'functions/get-colors-index';
+@import 'functions/get-colors-name';
+@import 'functions/search-color-map';
+@import 'functions/match-colors';
+@import 'functions/generate-color';
+@import 'functions/set-color';
+@import 'functions/strip-units';
+@import 'functions/map-deep-get';
+@import 'functions/map-deep-merge';
+@import 'functions/remove-from-string';
+@import 'functions/is-falsy';
+@import 'functions/get-css-mod';
+@import 'functions/get-css-val';

@@ -1,0 +1,5 @@
+@function get-palette-var($colorRGBA, $theme) {
+    $colorMap: map-get($colors, $theme);
+    $colorVarName: get-colors-name($colorMap, $colorRGBA, 'color');
+    @return #{$colorVarName};
+}

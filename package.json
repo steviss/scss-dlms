@@ -1,0 +1,54 @@
+{
+    "name": "vanilla",
+    "version": "1.0.1",
+    "description": "SCSS Palette",
+    "main": "index.html",
+    "scripts": {
+        "build": "yarn webpack",
+        "watch": "yarn webpack --watch"
+    },
+    "keywords": [],
+    "author": "liondev",
+    "license": "ISC",
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all",
+            "ie >= 9"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version",
+            "ie >= 9"
+        ]
+    },
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/plugin-proposal-class-properties": "^7.10.4",
+        "@babel/plugin-proposal-decorators": "^7.10.5",
+        "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+        "@babel/plugin-transform-spread": "^7.11.0",
+        "@babel/preset-env": "^7.11.5",
+        "@babel/preset-stage-3": "^7.8.3",
+        "autoprefixer": "^10.0.0",
+        "babel-loader": "^8.1.0",
+        "css-loader": "^4.3.0",
+        "dotenv": "^8.2.0",
+        "extract-loader": "^5.1.0",
+        "file-loader": "^6.1.0",
+        "mini-css-extract-plugin": "^0.11.2",
+        "node-sass": "^4.14.1",
+        "postcss": "^8.0.6",
+        "postcss-cli": "^8.0.0",
+        "postcss-loader": "^4.0.2",
+        "postcss-scss": "^3.0.0",
+        "sass-loader": "^10.0.2",
+        "source-map": "^0.7.3",
+        "style-loader": "^1.2.1",
+        "webpack": "^4.44.2",
+        "webpack-cli": "^3.3.12"
+    },
+    "private": true
+}

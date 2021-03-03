@@ -1,0 +1,8 @@
+// Component: Mozilla
+// Description: Target Any Mozilla
+
+@mixin moz() {
+	@-moz-document url-prefix() { 
+		@content;
+	}
+}
