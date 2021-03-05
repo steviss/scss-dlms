@@ -1,0 +1,17 @@
+@function get-color($colorId, $theme, $colorRGBA) {
+    $colorRef: nth(map-keys($referenceMap), get-colors-index($referenceMap, $colorRGBA));
+    $currentThemesReferenceMap: $themesReferenceMap;
+    $currentThemeMap: map-get($themesReferenceMap, $theme);
+    @if map-has-value($currentThemeMap, $colorRef) {
+        $colorId: nth(map-keys($currentThemeMap), get-map-index($currentThemeMap, $colorRef));
+    } @else {
+        $themeColorMap: (
+            $colorId: $colorRef,
+        );
+        $themeMap: (
+            $theme: map-merge($currentThemeMap, $themeColorMap),
+        );
+        $themesReferenceMap: map-deep-merge($currentThemesReferenceMap, $themeMap) !global;
+    }
+    @return #{$colorId};
+}

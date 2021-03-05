@@ -1,8 +1,10 @@
-//Config files
+//Palettes
+@import './palettes/';
+//Variables
 @import '_variables';
 
 //Functions
-@import '_functions';
+@import './functions/';
 
 //Mixins
 @import '_mixins';

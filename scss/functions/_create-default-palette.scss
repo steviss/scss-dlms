@@ -1,0 +1,8 @@
+@function create-default-palette($maps) {
+    $result: ();
+    @each $map in $maps {
+        $result: map-merge($result, $map);
+    }
+    $availableColors: $result !global;
+    @return $result;
+}

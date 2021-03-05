@@ -1,28 +1,12 @@
-@mixin render-colors($colors: $colors, $theme: $themeDefault) {
-    @each $paletteName, $palette in $palettes {
-        @if $paletteName == $paletteDefault {
-            @each $themeName, $theme in $themes {
-                $colorMap: map-get($colors, $themeName);
-                @if $themeName == $themeDefault {
-                    :root {
-                        @include render-var-map($paletteName, $themeName);
-                    }
-                } @else {
-                    :root[theme='#{$themeName}'] {
-                        @include render-var-map($paletteName, $themeName);
-                    }
-                }
-            }
-        } @else {
-            @each $themeName, $theme in $themes {
-                @if $themeName == $themeDefault {
-                    :root[data-palette='#{$paletteName}'] {
-                        @include render-var-map($paletteName, $themeName);
-                    }
-                } @else {
-                    :root[data-palette='#{$paletteName}'][theme='#{$themeName}'] {
-                        @include render-var-map($paletteName, $themeName);
-                    }
+@mixin render-colors($theme: $themeModeDefault) {
+    :root {
+        @each $colorName, $color in $referenceMap {
+            --#{$colorName}: #{$color};
+        }
+        @each $themeMode, $themeMap in $themesReferenceMap {
+            &[theme='#{$themeMode}'] {
+                @each $colorId, $colorRef in $themeMap {
+                    --#{$colorId}: var(--#{$colorRef});
                 }
             }
         }

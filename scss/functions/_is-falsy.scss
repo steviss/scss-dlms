@@ -1,26 +1,26 @@
 @function is-falsy($var) {
-  @if type-of($var) == 'null' {
-    @return true;
-  } @else if type-of($var) == 'bool' {
-    @if $var == false {
-      @return true;
+    @if type-of($var) == 'null' {
+        @return true;
+    } @else if type-of($var) == 'bool' {
+        @if $var == false {
+            @return true;
+        } @else {
+            @return false;
+        }
+    } @else if type-of($var) == 'number' {
+        $ceil: ceil($var);
+        @if $ceil > 0 {
+            @return true;
+        } @else {
+            @return false;
+        }
+    } @else if type-of($var) == 'list' or type-of($var) == 'map' {
+        @if length($var) > 0 {
+            @return false;
+        } @else {
+            @return true;
+        }
     } @else {
-      @return false;
+        @return false;
     }
-  } @else if type-of($var) == 'number' {
-    $ceil: ceil($var);
-    @if $ceil > 0 {
-      @return true;
-    } @else {
-      @return false;
-    }
-  } @else if type-of($var) == 'list' or type-of($var) == 'map' {
-    @if length($var) > 0 {
-      @return false;
-    } @else {
-      @return true;
-    }
-  } @else {
-    @return false;
-  }
 }

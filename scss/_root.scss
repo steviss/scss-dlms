@@ -2,28 +2,6 @@
     padding: 0;
     margin: 0;
 }
-
-::-moz-selection,
-::selection {
-    background-color: set-color(
-        (
-            light: primary,
-            dark: white,
-        )
-    );
-    color: set-color(
-        (
-            light: primary,
-            dark: white,
-        )
-    );
-}
-
-#___gatsby {
-    width: 100%;
-    height: 100%;
-}
-
 html {
     position: relative;
     height: 100%;
@@ -45,78 +23,5 @@ html {
             )
         );
     }
-
-    &.no-scroll {
-        position: fixed;
-        overflow: hidden;
-        > body {
-            position: absolute;
-        }
-    }
 }
-
-body {
-    color: set-color(
-        (
-            light: grey-800,
-            dark: white,
-        )
-    );
-    font-family: $font-family-base;
-    position: relative;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: greyscale;
-    > svg,
-    > audio {
-        display: none;
-        visibility: hidden;
-    }
-}
-
-a {
-    color: set-color(
-        (
-            light: grey-700,
-            dark: white,
-        )
-    );
-    &:hover {
-        color: set-color(
-            (
-                light: grey-700,
-                dark: white,
-            )
-        );
-    }
-}
-
-input,
-textarea,
-button {
-    outline: 0 !important;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-
-    &::-moz-focus-inner {
-        outline: 0 !important;
-        border: 0;
-    }
-
-    &:invalid,
-    &:-moz-ui-invalid:not(output) {
-        box-shadow: none !important;
-    }
-}
-
-input[type='number']::-webkit-outer-spin-button,
-input[type='number']::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type='number'] {
-    -moz-appearance: textfield;
-}
-
 @include render-colors();

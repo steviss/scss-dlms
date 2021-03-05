@@ -1,18 +1,18 @@
 @function get-colors-name($searchMap, $value, $find: 'index') {
-  @if $find == 'index' {
-    $mapToList: map-keys($searchMap);
-    @return nth($mapToList, $value);
-  } @else if $find == 'color' {
-    @each $colorName, $color in $searchMap {
-      @if match-colors($color, $value) {
-        $i: index($searchMap, $colorName $color);
+    @if $find == 'index' {
         $mapToList: map-keys($searchMap);
-        @return nth($mapToList, $i);
-      }
+        @return nth($mapToList, $value);
+    } @else if $find == 'color' {
+        @each $colorName, $color in $searchMap {
+            @if match-colors($color, $value) {
+                $i: index($searchMap, $colorName $color);
+                $mapToList: map-keys($searchMap);
+                @return nth($mapToList, $i);
+            }
+        }
+        @return 0;
+    } @else {
+        @warn 'Please specify $find to be an index or color in order to get the name properly.';
+        @return 0;
     }
-    @return 0;
-  } @else {
-    @warn 'Please specify $find to be an index or color in order to get the name properly.';
-    @return 0;
-  }
 }

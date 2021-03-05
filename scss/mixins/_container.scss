@@ -1,9 +1,0 @@
-// Container mixins
-
-@mixin make-container($gutter: $padding-large-horizontal) {
-    width: 100%;
-    padding-right: #{$gutter};
-    padding-left: #{$gutter};
-    margin-right: auto;
-    margin-left: auto;
-}

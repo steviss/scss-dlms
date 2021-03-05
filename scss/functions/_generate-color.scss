@@ -1,25 +1,17 @@
-@function generate-color($color: 'primary', $modifier: false, $value: false, $theme: $themeDefault, $palette: $paletteDefault) {
-    $paletteMap: map-get($palettes, $palette);
-    $coloursMap: map-get($colors, $theme);
-    @if map-has-key($paletteMap, $color) {
-        @if ($modifier == false and $value == false) {
-            $colorRGBA: map-get($paletteMap, $color);
-            @if search-color-map($coloursMap, $colorRGBA) {
-                @return get-palette-var($colorRGBA, $theme);
-            } @else {
-                @return add-palette-var($colorRGBA, $theme, $color);
-            }
+@function generate-color($colorId, $colorKey, $modifier: false, $value: false, $theme: $themeDefault) {
+    $colorRGBA: map-get($availableColors, $colorKey);
+    @if ($modifier == false and $value == false) {
+        @if search-color-map($referenceMap, $colorRGBA) {
+            @return get-color($colorId, $theme, $colorRGBA);
         } @else {
-            $colorRGBA: call(get-function($modifier), map-get($paletteMap, $color), $value);
-            @if search-color-map($coloursMap, $colorRGBA) {
-                @return get-palette-var($colorRGBA, $theme);
-            } @else {
-                @return add-palette-var($colorRGBA, $theme, $color, $modifier, $value);
-            }
+            @return add-color($colorId, $theme, $colorKey);
         }
     } @else {
-        @debug 'test';
-        @error 'Map or value isn\'t available, please check available maps and colors in _variables.scss';
-        @error map-keys($paletteMap);
+        $colorRGBA: call(get-function($modifier), $colorKey, $value);
+        @if search-color-map($referenceMap, $colorRGBA) {
+            @return get-color($colorId, $theme, $colorRGBA);
+        } @else {
+            @return add-color($colorId, $theme, $colorKey, $modifier, $value);
+        }
     }
 }

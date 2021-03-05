@@ -1,0 +1,33 @@
+@function add-color($colorId, $theme, $color, $modifier: false, $value: false) {
+    $colorRef: unique-id();
+    $oldReferenceMap: $referenceMap;
+    $currentThemesReferenceMap: $themesReferenceMap;
+    $currentThemeMap: map-get($themesReferenceMap, $theme);
+    $rgbaColor: map-get($availableColors, $color);
+    @debug '--- OLD THEME MAP START ---';
+    @debug $currentThemeMap;
+    @debug '--- OLD THEME MAP END ---';
+    @if $modifier != false and $value != false {
+        $rgbaColor: call(get-function($modifier), $color, $value);
+        @debug '--- Modifier and Value are set ---';
+        @debug $modifier, $value;
+    }
+    @debug '--- RGBA COLOR ---';
+    @debug $rgbaColor;
+    $colorMap: (
+        $colorRef: $rgbaColor,
+    );
+    $themeColorMap: (
+        $colorId: $colorRef,
+    );
+    $themeMap: (
+        $theme: map-merge($currentThemeMap, $themeColorMap),
+    );
+    $referenceMap: map-merge($oldReferenceMap, $colorMap) !global;
+    $themesReferenceMap: map-deep-merge($currentThemesReferenceMap, $themeMap) !global;
+    @debug '--- NEW COLOR ADDED START ---';
+    @debug $themesReferenceMap;
+    @debug $referenceMap;
+    @debug '--- NEW COLOR ADDED END ---';
+    @return #{$colorId};
+}

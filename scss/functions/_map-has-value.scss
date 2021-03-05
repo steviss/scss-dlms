@@ -1,0 +1,8 @@
+@function map-has-value($searchMap, $findValue) {
+    @each $itemKey, $itemValue in $searchMap {
+        @if $itemValue == $findValue {
+            @return true;
+        }
+    }
+    @return false;
+}

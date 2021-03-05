@@ -46,15 +46,4 @@ module.exports = {
             'process.env': dotenv.parsed,
         }),
     ],
-    resolve: {
-        alias: {
-            '@utils': path.resolve(__dirname, 'source/js/utils/'),
-            '@api': path.resolve(__dirname, 'source/js/api/'),
-            '@components': path.resolve(__dirname, 'source/js/components/'),
-            '@objects': path.resolve(__dirname, 'source/js/objects/'),
-            '@modal': path.resolve(__dirname, 'source/js/modal/'),
-            '@hooks': path.resolve(__dirname, 'source/js/hooks/'),
-            '@store': path.resolve(__dirname, 'source/js/store/'),
-        },
-    },
 };
