@@ -1,9 +1,6 @@
 @function get-map-index($searchMap, $findValue) {
     @each $itemKey, $itemValue in $searchMap {
         @if $itemValue == $findValue {
-            @debug 'WHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAT';
-            @debug index($searchMap, $itemKey $itemValue);
-            @debug 'WHAAAAAAAAAAAAAAAAAAAAAAAAAAt';
             @return index($searchMap, $itemKey $itemValue);
         }
     }

@@ -3,45 +3,27 @@
         $refrenceVarId: unique-id();
         $colorId: $refrenceVarId;
         $availableColors: create-default-palette($colorsMapList);
+        @debug 'RefID: #{$refrenceVarId}, ColorID: #{$colorId}';
         @each $themeMode, $assignedColor in $args {
-            @if $themeMode == $themeModeDefault {
-                @if type-of($assignedColor) == 'list' {
-                    $setColor: nth($assignedColor, 1);
-                    $setModifier: nth($assignedColor, 2);
-                    $setValue: nth($assignedColor, 3);
-                    @if map-has-key($availableColors, $setColor) {
-                        $color: map-get($availableColors, $setColor);
-                        $refrenceVarId: generate-color($colorId, $color, $setModifier, $setValue, $theme: $themeMode);
-                    } @else {
-                        @error 'Supplied key: `#{$setColor}`, is not included in the pallette map (please note, quotes are not allowed), please use one of the following key values: #{$paletteMap}.';
-                    }
+            @if type-of($assignedColor) == 'list' {
+                $setColor: nth($assignedColor, 1);
+                $setModifier: nth($assignedColor, 2);
+                $setValue: nth($assignedColor, 3);
+                @if map-has-key($availableColors, $setColor) {
+                    $color: map-get($availableColors, $setColor);
+                    $refrenceVarId: generate-color($colorId, $color, $themeMode, $setModifier, $setValue);
                 } @else {
-                    @if map-has-key($availableColors, $assignedColor) {
-                        $refrenceVarId: generate-color($colorId, $assignedColor, $theme: $themeMode);
-                    } @else {
-                        @error 'Supplied key: `#{$themeColor}`, is not included in the pallette map (please note, quotes are not allowed), please use one of the following key values: #{$paletteMap}.';
-                    }
+                    @error 'Supplied key: #{$setColor}, is not included in the pallette map (please note, quotes are not allowed), please use one of the following key values: #{$availableColors}.';
                 }
             } @else {
-                @if type-of($assignedColor) == 'list' {
-                    $setColor: nth($assignedColor, 1);
-                    $setModifier: nth($assignedColor, 2);
-                    $setValue: nth($assignedColor, 3);
-                    @if map-has-key($availableColors, $setColor) {
-                        $color: map-get($availableColors, $setColor);
-                        $refrenceVarId: generate-color($colorId, $color, $setModifier, $setValue, $theme: $themeMode);
-                    } @else {
-                        @error 'Supplied key: `#{$setColor}`, is not included in the pallette map (please note, quotes are not allowed), please use one of the following key values: #{$paletteMap}.';
-                    }
+                @if map-has-key($availableColors, $assignedColor) {
+                    $refrenceVarId: generate-color($colorId, $assignedColor, $themeMode);
                 } @else {
-                    @if map-has-key($availableColors, $assignedColor) {
-                        $refrenceVarId: generate-color($colorId, $assignedColor, $theme: $themeMode);
-                    } @else {
-                        @error 'Supplied key: `#{$themeColor}`, is not included in the pallette map (please note, quotes are not allowed), please use one of the following key values: #{$paletteMap}.';
-                    }
+                    @error 'Supplied key: #{$assignedColor}, is not included in the pallette map (please note, quotes are not allowed), please use one of the following key values: #{$availableColors}.';
                 }
             }
         }
+        @debug 'After RefID: #{$refrenceVarId}, ColorID: #{$colorId}';
         @return var(--#{$refrenceVarId});
     } @else {
         @error 'This function only accepts a map as an argument, please use the following syntax: (dark: $color, light: $color). Color must be a valid key in palettes. Color functions are also available, just pass $color as a list ($color, $modifier, $value). Paletters can be found in _varibles.css';

@@ -1,4 +1,4 @@
-@function generate-color($colorId, $colorKey, $modifier: false, $value: false, $theme: $themeDefault) {
+@function generate-color($colorId, $colorKey, $theme, $modifier: false, $value: false) {
     $colorRGBA: map-get($availableColors, $colorKey);
     @if ($modifier == false and $value == false) {
         @if search-color-map($referenceMap, $colorRGBA) {

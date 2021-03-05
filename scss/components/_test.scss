@@ -31,13 +31,25 @@ main.wrapper {
             dark: red-200,
         )
     );
+    color: set-color(
+        (
+            light: white,
+            dark: black,
+        )
+    );
 }
 
 .color-me-three {
     background-color: set-color(
         (
-            light: red-200,
-            dark: red-100,
+            light: red-500,
+            dark: red-500,
+        )
+    );
+    color: set-color(
+        (
+            light: white,
+            dark: white,
         )
     );
 }
