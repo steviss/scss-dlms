@@ -6,7 +6,7 @@ SCSS DLM is a SASS based Theme Mode Switcher. You can use it to make your apps e
 
 -   `set-color` feature for setting colors.
 -   `set-url` feature, for switching CSS Image-based variables according to the modes.
--   `set-content` feature, for switching text-based content according to the modes. (mostly for `::before` and `::after` pseudo-elements, but it can be used in animations, transitions, filters etc.)
+-   `set-content` feature, for switching text-based content according to the modes. (animations, transitions, filters etc.)
 
 ## How it works
 
