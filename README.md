@@ -18,7 +18,7 @@ If the colour key isn't found, it throws an error, lists available color keys.
 
 By switching the HTML attribute `theme`, from `light` to `dark`, you switch to the desired theme mode.
 
-There are also some minor tree shaking capabilities. It doesn't render all colours available in palettes, just the ones that are used.
+There are also some minor tree shaking capabilities. It doesn't render all colours available in palettes, just the ones that are used. This is true as well for the `set-url` and `set-content` where applicable.
 
 ## Usage
 
