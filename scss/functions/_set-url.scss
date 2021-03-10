@@ -1,0 +1,13 @@
+@function set-url($args) {
+    @if type-of($args) == 'map' {
+        $refrenceVarId: unique-id();
+        $contentId: $refrenceVarId;
+        @each $themeMode, $assignedUrl in $args {
+            $refrenceVarId: generate-url($contentId, $assignedUrl, $themeMode);
+        }
+        @return var(--#{$refrenceVarId});
+    } @else {
+        @error 'This function only accepts a map as an argument, please use the following syntax: (dark: $content, light: $content).';
+        @return 0;
+    }
+}

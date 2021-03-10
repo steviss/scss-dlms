@@ -1,0 +1,13 @@
+@function get-content($contentId, $theme, $content) {
+    $contentRef: nth(map-keys($referenceMap), get-map-index($referenceMap, $content));
+    $currentThemesReferenceMap: $themesReferenceMap;
+    $currentThemeMap: map-get($themesReferenceMap, $theme);
+    $themeColorMap: (
+        $contentId: $contentRef,
+    );
+    $themeMap: (
+        $theme: map-merge($currentThemeMap, $themeColorMap),
+    );
+    $themesReferenceMap: map-deep-merge($currentThemesReferenceMap, $themeMap) !global;
+    @return #{$contentId};
+}

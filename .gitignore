@@ -13,6 +13,7 @@ node_modules
 /build
 /dist
 dist
+psd
 
 # Docker
 /docker/db

@@ -16,8 +16,6 @@ html {
         min-height: -webkit-fill-available;
         min-height: -moz-available;
         min-height: stretch;
-        width: 100%;
-        height: 100%;
         will-change: background-color;
         transition: background-color 0.4s ease-in-out;
         background-color: set-color(
@@ -28,4 +26,4 @@ html {
         );
     }
 }
-@include render-colors();
+@include render-vars();

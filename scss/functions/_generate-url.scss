@@ -1,0 +1,8 @@
+@function generate-url($urlId, $url, $theme) {
+    $urlSearch: url($url);
+    @if map-has-value($referenceMap, $urlSearch) {
+        @return get-url($urlId, $theme, $url);
+    } @else {
+        @return add-url($urlId, $theme, $url);
+    }
+}

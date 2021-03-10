@@ -1,0 +1,18 @@
+@function add-content($contentId, $theme, $content) {
+    $contentRef: unique-id();
+    $oldReferenceMap: $referenceMap;
+    $currentThemesReferenceMap: $themesReferenceMap;
+    $currentThemeMap: map-get($themesReferenceMap, $theme);
+    $contentMap: (
+        $contentRef: $content,
+    );
+    $themeColorMap: (
+        $contentId: $contentRef,
+    );
+    $themeMap: (
+        $theme: map-merge($currentThemeMap, $themeColorMap),
+    );
+    $referenceMap: map-merge($oldReferenceMap, $contentMap) !global;
+    $themesReferenceMap: map-deep-merge($currentThemesReferenceMap, $themeMap) !global;
+    @return #{$contentId};
+}

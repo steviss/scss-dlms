@@ -1,0 +1,13 @@
+@function set-content($args) {
+    @if type-of($args) == 'map' {
+        $refrenceVarId: unique-id();
+        $contentId: $refrenceVarId;
+        @each $themeMode, $assignedContent in $args {
+            $refrenceVarId: generate-content($contentId, $assignedContent, $themeMode);
+        }
+        @return var(--#{$refrenceVarId});
+    } @else {
+        @error 'This function only accepts a map as an argument, please use the following syntax: (dark: $content, light: $content).';
+        @return 0;
+    }
+}

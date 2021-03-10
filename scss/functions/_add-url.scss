@@ -1,0 +1,18 @@
+@function add-url($urlId, $theme, $url) {
+    $urlRef: unique-id();
+    $oldReferenceMap: $referenceMap;
+    $currentThemesReferenceMap: $themesReferenceMap;
+    $currentThemeMap: map-get($themesReferenceMap, $theme);
+    $urlMap: (
+        $urlRef: url($url),
+    );
+    $themeColorMap: (
+        $urlId: $urlRef,
+    );
+    $themeMap: (
+        $theme: map-merge($currentThemeMap, $themeColorMap),
+    );
+    $referenceMap: map-merge($oldReferenceMap, $urlMap) !global;
+    $themesReferenceMap: map-deep-merge($currentThemesReferenceMap, $themeMap) !global;
+    @return #{$urlId};
+}

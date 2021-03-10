@@ -1,6 +1,4 @@
-@mixin render-colors() {
-    @debug $referenceMap;
-    @debug $themesReferenceMap;
+@mixin render-vars() {
     :root {
         @each $colorName, $color in $referenceMap {
             --#{$colorName}: #{$color};

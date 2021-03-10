@@ -1,0 +1,7 @@
+@function generate-content($contentId, $content, $theme) {
+    @if map-has-value($referenceMap, $content) {
+        @return get-content($contentId, $theme, $content);
+    } @else {
+        @return add-content($contentId, $theme, $content);
+    }
+}

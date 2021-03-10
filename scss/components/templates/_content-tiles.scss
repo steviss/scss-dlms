@@ -1,0 +1,52 @@
+$content-tiles: (
+    one: (
+        background-image: url('../assets/doggo_walk.jpg'),
+        filter:
+            set-content(
+                (
+                    light: blur(5px),
+                    dark: brightness(0.4),
+                )
+            ),
+    ),
+    two: (
+        background-image: url('../assets/doggo_walk.jpg'),
+        filter:
+            set-content(
+                (
+                    light: contrast(200%),
+                    dark: drop-shadow(16px 16px 20px blue),
+                )
+            ),
+    ),
+    three: (
+        background-image: url('../assets/doggo_walk.jpg'),
+        filter:
+            set-content(
+                (
+                    light: grayscale(50%),
+                    dark: hue-rotate(90deg),
+                )
+            ),
+    ),
+    four: (
+        background-image: url('../assets/doggo_walk.jpg'),
+        filter:
+            set-content(
+                (
+                    light: invert(75%),
+                    dark: opacity(25%),
+                )
+            ),
+    ),
+    five: (
+        background-image: url('../assets/doggo_walk.jpg'),
+        filter:
+            set-content(
+                (
+                    light: saturate(30%),
+                    dark: sepia(60%),
+                )
+            ),
+    ),
+);

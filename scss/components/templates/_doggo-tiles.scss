@@ -1,0 +1,38 @@
+$doggo-tiles: (
+    one: (
+        background-image:
+            set-url(
+                (
+                    light: '../assets/doggo_play.jpg',
+                    dark: '../assets/doggo_walk.jpg',
+                )
+            ),
+    ),
+    two: (
+        background-image:
+            set-url(
+                (
+                    light: '../assets/doggo_wake.jpg',
+                    dark: '../assets/doggo_sleep.jpg',
+                )
+            ),
+    ),
+    three: (
+        background-image:
+            set-url(
+                (
+                    light: '../assets/doggo_play.jpg',
+                    dark: '../assets/doggo_sleep.jpg',
+                )
+            ),
+    ),
+    four: (
+        background-image:
+            set-url(
+                (
+                    light: '../assets/doggo_walk.jpg',
+                    dark: '../assets/doggo_wake.jpg',
+                )
+            ),
+    ),
+);

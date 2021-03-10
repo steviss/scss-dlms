@@ -1,0 +1,14 @@
+@function get-url($urlId, $theme, $url) {
+    $urlSearch: url($url);
+    $urlRef: nth(map-keys($referenceMap), get-map-index($referenceMap, $urlSearch));
+    $currentThemesReferenceMap: $themesReferenceMap;
+    $currentThemeMap: map-get($themesReferenceMap, $theme);
+    $themeColorMap: (
+        $urlId: $urlRef,
+    );
+    $themeMap: (
+        $theme: map-merge($currentThemeMap, $themeColorMap),
+    );
+    $themesReferenceMap: map-deep-merge($currentThemesReferenceMap, $themeMap) !global;
+    @return #{$urlId};
+}

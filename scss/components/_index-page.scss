@@ -1,21 +1,135 @@
 @import './templates/';
 $fontTiles: $roboto-tiles, $open-sans-tiles, $merriweather-tiles;
-$templates: create-map-collection($fontTiles);
+$colorTemplates: create-map-collection($fontTiles);
 
 main.wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     padding: 2rem;
 }
 
-.colors {
+button.switch-mode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    will-change: border, color, background-color;
+    transition: border 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    color: set-color(
+        (
+            light: black,
+            dark: white,
+        )
+    );
+    border: 1px solid
+        set-color(
+            (
+                light: red-700,
+                dark: red-300,
+            )
+        );
+    background-color: set-color(
+        (
+            light: red-500,
+            dark: red-200,
+        )
+    );
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        background-color: set-color(
+            (
+                light: red-900,
+                dark: red-500,
+            )
+        );
+    }
+    cursor: pointer;
+}
+
+.colors,
+.contents,
+.doggos {
     display: grid;
     grid-row-gap: 1rem;
     grid-column-gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     grid-auto-rows: minmax(12.5rem, 1fr);
+    &-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        > header {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        > header > h2 {
+            display: flex;
+            color: set-color(
+                (
+                    light: grey-800,
+                    dark: white,
+                )
+            );
+        }
+    }
+}
+
+.doggos,
+.contents {
+    display: grid;
+    grid-row-gap: 1rem;
+    grid-column-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, 250px);
+    grid-auto-rows: 250px;
+}
+
+.content {
+    position: relative;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 2px
+        set-color(
+            (
+                light: black,
+                dark: white,
+            )
+        );
+    object-fit: contain;
+    background-position: center;
+    background-size: cover;
+    will-change: background-image;
+    @each $name, $template in $content-tiles {
+        &.content-#{$name} {
+            @each $key, $value in $template {
+                #{$key}: #{$value};
+            }
+        }
+    }
+}
+
+.doggo {
+    position: relative;
+    padding: 1rem;
+    object-fit: contain;
+    background-position: center;
+    background-size: cover;
+    will-change: background-image;
+    @each $name, $template in $doggo-tiles {
+        &.doggo-#{$name} {
+            @each $key, $value in $template {
+                #{$key}: #{$value};
+            }
+        }
+    }
 }
 
 .color {
@@ -67,7 +181,7 @@ main.wrapper {
     &:hover::before {
         opacity: 1;
     }
-    @each $name, $template in $templates {
+    @each $name, $template in $colorTemplates {
         &.color-#{$name} {
             $beforeContent: quote($name) + '\00000a';
             @if map-has-key($template, 'font-family') != true {

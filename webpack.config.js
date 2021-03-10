@@ -36,6 +36,19 @@ module.exports = {
                     loader: 'babel-loader',
                 },
             },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                exclude: /(node_modules|docker)/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: '../images',
+                        },
+                    },
+                ],
+            },
         ],
     },
     plugins: [
