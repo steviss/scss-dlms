@@ -104,7 +104,9 @@ Run the project in --watch mode:
 yarn watch
 ```
 
-Build the project in --watch mode:
+> There is no hot reloading, I was too lazy to set it up. It's just an example so you can see how it works. It's not meant to be a working enviroment.
+
+Build the project:
 
 ```sh
 yarn build
