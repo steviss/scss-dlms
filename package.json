@@ -9,7 +9,7 @@
     },
     "keywords": [],
     "author": "steviss <stefan@steviss.dev>",
-    "license": "ISC",
+    "license": "MIT",
     "browserslist": {
         "production": [
             ">0.2%",
