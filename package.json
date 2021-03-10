@@ -7,7 +7,12 @@
         "build": "yarn webpack",
         "watch": "yarn webpack --watch"
     },
-    "keywords": [],
+    "keywords": [
+        "scss",
+        "switcher",
+        "dark-mode",
+        "light-mode"
+    ],
     "author": "steviss <stefan@steviss.dev>",
     "license": "MIT",
     "browserslist": {
