@@ -1,0 +1,87 @@
+@import './templates/';
+$fontTiles: $roboto-tiles, $open-sans-tiles, $merriweather-tiles;
+$templates: create-map-collection($fontTiles);
+
+main.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.colors {
+    display: grid;
+    grid-row-gap: 1rem;
+    grid-column-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-auto-rows: minmax(12.5rem, 1fr);
+}
+
+.color {
+    position: relative;
+    padding: 1rem;
+    font-size: 1rem;
+    will-change: background-color, color;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    &::before {
+        position: absolute;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-width: calc(100% - 2rem);
+        max-height: calc(100% - 2rem);
+        margin: auto;
+        white-space: break-spaces;
+        text-align: center;
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity 0.4s ease-in-out;
+        cursor: help;
+        background-color: set-color(
+            (
+                light: (
+                    white,
+                    transparentize,
+                    0.05,
+                ),
+                dark: (
+                    black,
+                    transparentize,
+                    0.05,
+                ),
+            )
+        );
+        color: set-color(
+            (
+                light: black,
+                dark: white,
+            )
+        );
+    }
+    &:hover::before {
+        opacity: 1;
+    }
+    @each $name, $template in $templates {
+        &.color-#{$name} {
+            $beforeContent: quote($name) + '\00000a';
+            @if map-has-key($template, 'font-family') != true {
+                $beforeContent: $beforeContent + $defaultFont + '\00000a';
+            }
+            @each $key, $value in $template {
+                @if $key != background-color and $key != color {
+                    $beforeContent: $beforeContent + $value + '\00000a';
+                }
+                #{$key}: #{$value};
+            }
+            &::before {
+                content: $beforeContent;
+            }
+        }
+    }
+}

@@ -1,0 +1,154 @@
+$merriweather-tiles: (
+    m-one: (
+        font-family: "'Merriweather', serif",
+        font-weight: 300,
+        font-style: normal,
+        background-color:
+            set-color(
+                (
+                    light: indigo-700,
+                    dark: purple-300,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: black,
+                )
+            ),
+    ),
+    m-two: (
+        font-family: "'Merriweather', serif",
+        font-weight: 300,
+        font-style: italic,
+        background-color:
+            set-color(
+                (
+                    light: orange-600,
+                    dark: teal-200,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: white,
+                )
+            ),
+    ),
+    m-three: (
+        font-family: "'Merriweather', serif",
+        font-weight: 400,
+        font-style: normal,
+        background-color:
+            set-color(
+                (
+                    light: light-green-900,
+                    dark: deep-purple-200,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: black,
+                )
+            ),
+    ),
+    m-four: (
+        font-family: "'Merriweather', serif",
+        font-weight: 400,
+        font-style: italic,
+        background-color:
+            set-color(
+                (
+                    light: amber-600,
+                    dark: yellow-200,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: grey-600,
+                )
+            ),
+    ),
+    m-five: (
+        font-family: "'Merriweather', serif",
+        font-weight: 700,
+        font-style: normal,
+        background-color:
+            set-color(
+                (
+                    light: brown-300,
+                    dark: deep-orange-300,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: black,
+                )
+            ),
+    ),
+    m-six: (
+        font-family: "'Merriweather', serif",
+        font-weight: 700,
+        font-style: italic,
+        background-color:
+            set-color(
+                (
+                    light: pink-600,
+                    dark: amber-a-400,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: white,
+                )
+            ),
+    ),
+    m-seven: (
+        font-family: "'Merriweather', serif",
+        font-weight: 900,
+        font-style: normal,
+        background-color:
+            set-color(
+                (
+                    light: lime-a-700,
+                    dark: green-a-200,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: grey-500,
+                    dark: black,
+                )
+            ),
+    ),
+    m-eight: (
+        font-family: "'Merriweather', serif",
+        font-weight: 900,
+        font-style: italic,
+        background-color:
+            set-color(
+                (
+                    light: blue-300,
+                    dark: pink-a-400,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: white,
+                )
+            ),
+    ),
+);

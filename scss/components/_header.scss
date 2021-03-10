@@ -1,0 +1,48 @@
+header.header {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: set-color(
+        (
+            light: primary-900,
+            dark: white,
+        )
+    );
+    background-color: set-color(
+        (
+            light: white,
+            dark: primary-900,
+        )
+    );
+    border-bottom: 1px solid
+        set-color(
+            (
+                light: grey-100,
+                dark: purple-900,
+            )
+        );
+    box-shadow: 0 0 2px 2px
+        set-color(
+            (
+                light: (
+                    grey-400,
+                    transparentize,
+                    0.85,
+                ),
+                dark: (
+                    purple-800,
+                    transparentize,
+                    0.85,
+                ),
+            )
+        );
+    will-change: background-color, color, box-shadow, border-bottom;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
+    z-index: 50;
+}

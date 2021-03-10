@@ -1,10 +1,10 @@
 // Component: Colour Maps
 // Description: Colour Maps
+$defaultFont: 'Roboto', sans-serif;
 $themeModeDefault: 'light' !global;
 $themesReferenceMap: (
     light: (),
     dark: (),
 ) !global;
 $referenceMap: () !global;
-$treeshakenColorsMap: ();
-$colorsMapList: $theme, $grey, $red;
+$colorsMapList: $amber, $blue-grey, $blue, $brown, $cyan, $deep-orange, $deep-purple, $green, $grey, $indigo, $light-blue, $light-green, $lime, $orange, $pink, $purple, $red, $teal, $theme, $yellow;

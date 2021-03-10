@@ -1,0 +1,218 @@
+$roboto-tiles: (
+    r-one: (
+        font-weight: 100,
+        font-style: normal,
+        background-color:
+            set-color(
+                (
+                    light: light-blue-900,
+                    dark: light-blue-300,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: black,
+                )
+            ),
+    ),
+    r-two: (
+        font-weight: 100,
+        font-style: italic,
+        background-color:
+            set-color(
+                (
+                    light: red-900,
+                    dark: red-400,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: white,
+                )
+            ),
+    ),
+    r-three: (
+        font-weight: 300,
+        font-style: normal,
+        background-color:
+            set-color(
+                (
+                    light: pink-900,
+                    dark: pink-300,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: white,
+                )
+            ),
+    ),
+    r-four: (
+        font-weight: 300,
+        font-style: italic,
+        background-color:
+            set-color(
+                (
+                    light: purple-900,
+                    dark: purple-300,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: white,
+                )
+            ),
+    ),
+    r-five: (
+        font-weight: 400,
+        font-style: normal,
+        background-color:
+            set-color(
+                (
+                    light: deep-purple-800,
+                    dark: deep-purple-200,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: black,
+                )
+            ),
+    ),
+    r-six: (
+        font-weight: 400,
+        font-style: italic,
+        background-color:
+            set-color(
+                (
+                    light: indigo-700,
+                    dark: indigo-400,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: grey-50,
+                )
+            ),
+    ),
+    r-seven: (
+        font-weight: 500,
+        font-style: normal,
+        background-color:
+            set-color(
+                (
+                    light: blue-900,
+                    dark: blue-400,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: grey-800,
+                )
+            ),
+    ),
+    r-eight: (
+        font-weight: 500,
+        font-style: italic,
+        background-color:
+            set-color(
+                (
+                    light: light-blue-600,
+                    dark: light-blue-100,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: grey-800,
+                )
+            ),
+    ),
+    r-nine: (
+        font-weight: 700,
+        font-style: normal,
+        background-color:
+            set-color(
+                (
+                    light: cyan-900,
+                    dark: cyan-300,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: grey-800,
+                )
+            ),
+    ),
+    r-ten: (
+        font-weight: 700,
+        font-style: italic,
+        background-color:
+            set-color(
+                (
+                    light: teal-300,
+                    dark: teal-800,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: white,
+                )
+            ),
+    ),
+    r-eleven: (
+        font-weight: 900,
+        font-style: normal,
+        background-color:
+            set-color(
+                (
+                    light: green-800,
+                    dark: green-300,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: white,
+                )
+            ),
+    ),
+    r-twelve: (
+        font-weight: 900,
+        font-style: italic,
+        background-color:
+            set-color(
+                (
+                    light: orange-300,
+                    dark: orange-800,
+                )
+            ),
+        color:
+            set-color(
+                (
+                    light: white,
+                    dark: white,
+                )
+            ),
+    ),
+);

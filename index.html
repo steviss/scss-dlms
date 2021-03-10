@@ -5,6 +5,11 @@
         <title>SCSS Test</title>
         <meta name="author" content="steviss" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="dist/css/main.min.css" />
         <script src="dist/js/main.min.js" defer></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -14,20 +19,13 @@
         <![endif]-->
     </head>
     <body>
+        <header class="header">
+            <h1>Color Switcher jQuery Test</h1>
+            <div class="current-mode">Light Mode</div>
+            <button class="switch-mode">Switch modes</button>
+        </header>
         <main class="wrapper">
-            <header>
-                <button class="switch-mode">Switch modes</button>
-                <div class="current-mode"></div>
-            </header>
-            <div class="colors-test color-me">
-                <span>TESTING</span>
-            </div>
-            <div class="colors-test color-me-two">
-                <span>TESTING</span>
-            </div>
-            <div class="colors-test color-me-three">
-                <span>TESTING</span>
-            </div>
+            <div class="colors"></div>
         </main>
     </body>
 </html>
