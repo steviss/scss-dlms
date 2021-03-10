@@ -2,7 +2,7 @@
 
 [![CSS3](./md/poweredbycss3.png)](https://www.w3schools.com/css/) [![SCSS](./md/poweredbysass.png)](https://sass-lang.com/)
 
-SCSS DLM is a SASS based Theme Mode Switcher. You can use it to make your apps easily switch between Dark and Light Modes. It supports text-shadow, background-color, color, box shadow, fill. Pretty much everything that is colour-based. It supports two more features out of the box:
+SCSS DLM is a SASS based Theme Mode Switcher. You can use it to make your apps easily switch between Dark and Light Modes. It supports text-shadow, background-color, color, box shadow, fill. Pretty much everything that is colour-based. It supports following features out of the box:
 
 -   `set-color` feature for setting colors.
 -   `set-url` feature, for switching CSS Image-based variables according to the modes.
