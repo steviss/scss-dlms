@@ -27,19 +27,25 @@ There are also some minor tree shaking capabilities. It doesn't render all colou
 #### Examples:
 
 ```scss
-color: set-color(    (        light: pink-100,         dark: pink-900,    ));
+color: set-color((light: pink-100, dark: pink-900,));
 ```
 
 ```scss
-background-color: set-color(    (        light: green-100,         dark: green-900,    ));
+background-color: set-color((light: green-100, dark: green-900,));
 ```
+
+```scss
+background-color: set-color((light: (green-100, transparentize, 0.5), dark: (green-900, lighten, 5%),));
+```
+
+List of all availabler colour transformations: lighten, darken, saturate, desaturate, opacify, fade-in, transparentize, fade-out, adjust-hue. __I may expand on this, then again I may not.__
 
 ### `set-content`
 
 #### Examples:
 
 ```scss
-filter: set-content(    (        light: grayscale(50%),         dark: hue-rotate(90deg),    ));
+filter: set-content((light: grayscale(50%), dark: hue-rotate(90deg),));
 ```
 
 ```scss
