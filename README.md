@@ -38,7 +38,7 @@ background-color: set-color((light: green-100, dark: green-900,));
 background-color: set-color((light: (green-100, transparentize, 0.5), dark: (green-900, lighten, 5%),));
 ```
 
-List of all availabler colour transformations: lighten, darken, saturate, desaturate, opacify, fade-in, transparentize, fade-out, adjust-hue. __I may expand on this, then again I may not.__
+List of all available colour transformations: rgba, lighten, darken, saturate, desaturate, opacify, fade-in, transparentize, fade-out, adjust-hue. __I may expand on this, then again I may not.__
 
 ### `set-content`
 
