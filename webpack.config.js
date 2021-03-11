@@ -14,7 +14,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: './js/[name].min.js',
-        library: 'foodstand',
+        library: 'scss-dlms',
         libraryTarget: 'umd',
     },
     module: {
